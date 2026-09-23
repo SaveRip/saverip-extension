@@ -1,0 +1,134 @@
+{
+  "manifest_version": 3,
+  "name": "SaveRip — Download Anywhere",
+  "version": "0.1.3",
+  "description": "Download videos directly from the site you're on, no need to paste the URL into SaveRip.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "downloads",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://saverip.com/*",
+    "https://analytics.saverip.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "SaveRip",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://amateur8.com/*",
+        "*://*.amateur8.com/*",
+        "*://beeg.com/*",
+        "*://*.beeg.com/*",
+        "*://eporner.com/*",
+        "*://*.eporner.com/*",
+        "*://erome.com/*",
+        "*://*.erome.com/*",
+        "*://fetishpapa.com/*",
+        "*://*.fetishpapa.com/*",
+        "*://hdzog.tube/*",
+        "*://*.hdzog.tube/*",
+        "*://hdzog.com/*",
+        "*://*.hdzog.com/*",
+        "*://heavyfetish.com/*",
+        "*://*.heavyfetish.com/*",
+        "*://hqporner.com/*",
+        "*://*.hqporner.com/*",
+        "*://milfcaps.com/*",
+        "*://*.milfcaps.com/*",
+        "*://motherless.xxx/*",
+        "*://*.motherless.xxx/*",
+        "*://motherlessmedia.com/*",
+        "*://*.motherlessmedia.com/*",
+        "*://pornhub.com/*",
+        "*://*.pornhub.com/*",
+        "*://pornone.com/*",
+        "*://*.pornone.com/*",
+        "*://pornpics.com/*",
+        "*://*.pornpics.com/*",
+        "*://pornpics.de/*",
+        "*://*.pornpics.de/*",
+        "*://porntrex.com/*",
+        "*://*.porntrex.com/*",
+        "*://pornzog.com/*",
+        "*://*.pornzog.com/*",
+        "*://spankbang.com/*",
+        "*://*.spankbang.com/*",
+        "*://tnaflix.com/*",
+        "*://*.tnaflix.com/*",
+        "*://txxx.com/*",
+        "*://*.txxx.com/*",
+        "*://upornia.tube/*",
+        "*://*.upornia.tube/*",
+        "*://upornia.com/*",
+        "*://*.upornia.com/*",
+        "*://xfantazy.com/*",
+        "*://*.xfantazy.com/*",
+        "*://xhamster.com/*",
+        "*://*.xhamster.com/*",
+        "*://xhamster.one/*",
+        "*://*.xhamster.one/*",
+        "*://xhamster.desi/*",
+        "*://*.xhamster.desi/*",
+        "*://xhms.pro/*",
+        "*://*.xhms.pro/*",
+        "*://xhday.com/*",
+        "*://*.xhday.com/*",
+        "*://xhvid.com/*",
+        "*://*.xhvid.com/*",
+        "*://xnxx.com/*",
+        "*://*.xnxx.com/*",
+        "*://xnxx.es/*",
+        "*://*.xnxx.es/*",
+        "*://xvideos.com/*",
+        "*://*.xvideos.com/*"
+      ],
+      "js": [
+        "shared/config.js",
+        "content-script.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://saverip.com/*"
+      ],
+      "js": [
+        "shared/config.js",
+        "login-bridge.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "extension@saverip.com",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": [
+          "personallyIdentifyingInfo",
+          "authenticationInfo",
+          "locationInfo",
+          "websiteActivity",
+          "websiteContent"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">SaveRip</div>
+
+    <div id="loading" class="muted">Loading…</div>
+
+    <div id="update-banner" class="hidden">
+      <span>A new version is available.</span>
+      <a id="update-link" href="#" target="_blank" rel="noopener">Update now</a>
+    </div>
+
+    <div id="downloads-box" class="info-box hidden">
+      <div class="muted" style="margin-bottom:6px;">Downloading…</div>
+      <div id="downloads-list"></div>
+    </div>
+
+    <div id="quality-box" class="info-box hidden">
+      <div class="muted" style="margin-bottom:6px;">Preferred quality</div>
+      <select id="quality-select"></select>
+    </div>
+
+    <div id="quota-box" class="info-box hidden">
+      <div id="quota-text" class="muted"></div>
+    </div>
+
+    <div id="plan-box" class="info-box hidden">
+      <div id="plan-renews" class="muted"></div>
+      <div id="plan-method" class="muted"></div>
+      <button id="btn-manage-billing" class="btn btn-secondary hidden">Manage Subscription</button>
+    </div>
+
+    <div id="logged-out" class="hidden">
+      <p class="muted">You're browsing as a free user. Log in to sync your Pro status into the extension.</p>
+      <button id="btn-login" class="btn">Log in</button>
+    </div>
+
+    <div id="logged-in" class="hidden">
+      <div class="row">
+        <span id="email" class="email"></span>
+        <span id="plan-badge" class="badge"></span>
+      </div>
+      <button id="btn-pricing" class="btn btn-secondary">See plans</button>
+      <button id="btn-logout" class="btn btn-ghost">Log out</button>
+    </div>
+  </div>
+  <script src="../shared/config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
